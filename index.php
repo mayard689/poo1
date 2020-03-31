@@ -2,14 +2,16 @@
 
 require_once 'Car.php';
 require_once 'Bicycle.php';
+require_once 'Vehicle.php';
+require_once 'Truck.php';
 
+$myBike=new Bicycle("more or less red",1);
 
-$myBike=new Bicycle("more or less red");
 $myCar=new Car("blue", 5, "electric");
 $myCar2=new Car("blue", 5, "electric");
 
-$myCar->start();
-$myCar2->start();
+$myTruck=new Truck(100,"blue", 5 );
+$myTruck2=new Truck(200,"blue", 5 );
 
 ?>
 
@@ -20,16 +22,17 @@ $myCar2->start();
     <?= $myBike->brake() ?><br>
     
     
-    <?= $myCar->getEnergy() ?><br>
+
     
-    <?= $myCar->forward() ?><br>
-    <?= $myCar->brake() ?><br>
+    <?= $myTruck->forward() ?><br>
+    <?= $myTruck->brake() ?><br>
+
+    <?= $myTruck->isFull() ?><br>
+    <?php $myTruck->setLoad(100) ?><br>
+    <?= $myTruck->isFull() ?><br>
     
-    
-    <?= $myCar2->getEnergy() ?><br>
-    
-    <?= $myCar2->forward() ?><br>
-    <?= $myCar2->brake() ?><br>
+    <?= $myTruck2->forward() ?><br>
+    <?= $myTruck2->brake() ?><br>
 
 </html>
 
